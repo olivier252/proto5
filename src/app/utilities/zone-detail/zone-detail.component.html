@@ -1,0 +1,28 @@
+<div id="zone-detail-container">
+    <!-- <div class="stock-sheet-container">
+        <ul>
+            <li *ngFor="let pr of (itemProduct | keyvalue)">{{ pr.key }} - {{ pr.value }}</li>
+        </ul>
+    </div> -->
+
+    <div>
+        <app-stock-sheet></app-stock-sheet>
+    </div>
+
+    <div class="form-zone-container">
+        <form class="form-zone" [formGroup]="zoneFormGroup" (ngSubmit)="onSubmitZoneForm()">
+            <div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Saisie code barre</mat-label>
+                    <input appFocus matInput formControlName="zonecode" placeholder="EAN...">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <button color="primary" type="button" mat-fab>
+                    <mat-icon>wb_iridescent</mat-icon>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.form-zone {
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+#zone-detail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    vertical-align: center;
+    overflow-y: hidden;
+        height: calc(100vh - 56px);
+        overflow: scroll;;
+}
+
+.mat-form-field {
+    padding-right: 1em;
+}
+
+// .zone-detail-container {
+//     position: relative;
+// }

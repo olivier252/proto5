@@ -1,0 +1,42 @@
+<div id="main-layout">
+  <mat-sidenav-container class="main-layout">
+
+    <!-- MENU LATERAL -->
+    <mat-sidenav #sidenav mode="side">
+
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let itemMenu of itemsMenu" [routerLink]="itemMenu.utilRoute" routerLinkActive
+          #rla="routerLinkActive">
+          <mat-icon>{{ itemMenu.matIcon }}</mat-icon>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="sidenav-container">
+      <!-- MAIN CONTENT -->
+      <mat-toolbar class="toolbar-container" color="primary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()" *ngIf="isMini">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+
+        <button *ngIf="paramsUrl>2" type="button" aria-label="Toggle sidenav" mat-icon-button
+          (click)="redirectToMainLayout()">
+          <mat-icon>arrow_back_ios</mat-icon>
+        </button>
+
+        <span *ngIf="!isHandsetPortrait" class="titre_jour">{{ getTitreFull() }}</span>
+        <span *ngIf="isHandsetPortrait">
+          <ul class="doubletitre">
+            <li class="titre_jour doubletitre_item">{{ getTitreLine1() }}</li>
+            <li class="doubletitre_item doubletitre_item_small">{{ getTitreLine2() }}</li>
+          </ul>
+        </span>
+      </mat-toolbar>
+
+      <div class="router-container">
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,31 @@
+<div class="layout">
+    <div class="cardBlock" *ngIf="infoModele.photos" >
+        <mat-card>
+            <app-picture-model [photos]="infoModele.photos"></app-picture-model>
+        </mat-card>
+    </div>
+    <div class="cardBlock">
+        <mat-card>
+            <div class="infoBock">
+                <div class="boxInfo" [ngClass]="{xCases: infoLine.open}" *ngFor="let infoLine of infoModele.infoLines">
+                    <div>
+                        <div class="ilibelle titre-color-primary" [ngClass]="{'titre-color-accent': infoLine.format == 'a', ilibelleOpen:infoLine.open}">{{infoLine.libelle}}</div>
+                        <div class="idata" *ngIf="!infoLine.open || infoLine.format == 'c'"> {{infoLine.data}} </div>
+                    </div>
+                    <button mat-icon-button *ngIf="infoLine.lines" (click)="setEtat(infoLine)">
+                        <mat-icon *ngIf="!infoLine.open">expand_more</mat-icon>
+                        <mat-icon *ngIf="infoLine.open">expand_less</mat-icon>
+                    </button>
+                    <div class="yCases taillesBlock" *ngIf="infoLine.open">
+                        <div class="tailleBlock" *ngFor="let infoLine2 of infoLine.lines">
+                            <div>
+                                <div class="tailleLibelle titre-background-color-primary titre-color-primary panel-border-color-primary" [ngClass]="{'titre-background-color-accent titre-color-accent': infoLine2.format == 'a'}" >{{infoLine2.libelle}}</div>
+                                <div class="tailleData">{{ infoLine2.data }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

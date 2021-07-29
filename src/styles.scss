@@ -1,0 +1,437 @@
+@use 'sass:map';
+@use '~@angular/material' as mat;
+@import '~@angular/material/theming';
+@import "assets/css/variable.scss";
+
+
+@include mat.core();
+
+
+@mixin component-theme($theme) {
+
+    $my-theme-primary: map-get($theme, primary);
+    $my-theme-accent: map-get($theme, accent);
+    $my-theme-warn: map-get($theme, warn);
+
+    $color-fond-titre: mat.get-color-from-palette($my-theme-primary, 100);
+    $color-titre : mat.get-color-from-palette($my-theme-primary, darker);
+    $color-panel: mat.get-color-from-palette($my-theme-primary, darker-contrast);
+
+
+    $color-fond-titre-accent :mat.get-color-from-palette($my-theme-accent, 100);
+    $color-titre-accent: mat.get-color-from-palette($my-theme-accent, darker);
+    $color-panel-accent: mat.get-color-from-palette($my-theme-accent, darker-contrast);
+
+
+    .titre-background-color-primary
+    {
+        background-color: $color-fond-titre;
+    }
+
+    .titre-color-primary 
+    {
+        color: $color-titre;
+    } 
+    
+    .panel-background-color-primary
+    {
+        background-color: $color-panel;
+    }
+
+    .panel-border-color-primary
+    {
+        border-color: $color-panel;
+    }
+
+    .titre-background-color-accent
+    {
+        background-color: $color-fond-titre-accent;
+    }
+
+    .titre-color-accent
+    {
+        color: $color-titre-accent;
+    } 
+    
+    .panel-background-color-accent
+    {
+        background-color: $color-panel-accent;
+    }
+
+    @media #{$information-phone} /*Téléphone*/
+    {         
+        .p-dialog-titre
+        {
+            background-color: $color-fond-titre;
+        }
+    }
+    .p-label-donnee
+    {
+        color: $color-titre;
+    }
+    .p-label-titre
+    {
+        color: $color-titre;
+    }
+
+    .k-column-title
+    {
+        color: $color-titre;
+    }
+    .k-grid-header, .k-grouping-header, .k-grid-add-row, .k-grid-footer
+    {
+        color: $color-titre;
+    }
+}
+
+.my-theme-indigo {  
+    $my-theme-primary: mat-palette($mat-indigo,500, 300, 900);
+    $my-theme-accent: mat-palette($mat-pink, 400);
+    $my-theme-warn: mat-palette($mat-red, 500);
+
+    // create theme (use mat-dark-theme for themes with dark backgrounds)
+    $my-theme: mat-light-theme(
+        $my-theme-primary,
+        $my-theme-accent,
+        $my-theme-warn
+    );
+    // use our theme with angular-material-theme mixin
+    @include angular-material-theme($my-theme);
+    @include component-theme($my-theme);
+}
+
+.my-theme-polaris {  
+    $my-theme-primary: mat-palette($mat-deep-orange,500, 300, 900);
+    $my-theme-accent: mat-palette($mat-blue, 700);
+    $my-theme-warn: mat-palette($mat-purple, 500);
+
+    // create theme (use mat-dark-theme for themes with dark backgrounds)
+    $my-theme: mat-light-theme(
+        $my-theme-primary,
+        $my-theme-accent,
+        $my-theme-warn
+    );
+// use our theme with angular-material-theme mixin
+    @include angular-material-theme($my-theme);    
+    @include component-theme($my-theme);
+}  
+
+.my-theme-pink {  
+    $my-theme-primary: mat-palette($mat-pink,200, 300, 700);
+    $my-theme-accent: mat-palette($mat-cyan, 300);
+    $my-theme-warn: mat-palette($mat-purple, 700);
+
+    // create theme (use mat-dark-theme for themes with dark backgrounds)
+    $my-theme: mat-light-theme(
+        $my-theme-primary,
+        $my-theme-accent,
+        $my-theme-warn
+    );
+// use our theme with angular-material-theme mixin
+    @include angular-material-theme($my-theme);    
+    @include component-theme($my-theme);
+}  
+
+.my-theme-teal {  
+    $my-theme-primary: mat-palette($mat-teal, 500, 300, 700);
+    $my-theme-accent: mat-palette($mat-lime, 600);
+    $my-theme-warn: mat-palette($mat-pink, 500);
+
+    // create theme (use mat-dark-theme for themes with dark backgrounds)
+    $my-theme: mat-light-theme(
+        $my-theme-primary,
+        $my-theme-accent,
+        $my-theme-warn
+    );
+// use our theme with angular-material-theme mixin
+    @include angular-material-theme($my-theme);    
+    @include component-theme($my-theme);
+} 
+
+.my-theme-blue {  
+    $my-theme-primary: mat-palette($mat-blue, 700, 300, 700);
+    $my-theme-accent: mat-palette($mat-orange, 700);
+    $my-theme-warn: mat-palette($mat-red, 500);
+
+    // create theme (use mat-dark-theme for themes with dark backgrounds)
+    $my-theme: mat-light-theme(
+        $my-theme-primary,
+        $my-theme-accent,
+        $my-theme-warn
+    );
+// use our theme with angular-material-theme mixin
+    @include angular-material-theme($my-theme);    
+    @include component-theme($my-theme);
+} 
+
+.my-theme-dark {  
+    $my-theme-primary: mat-palette($mat-grey, 100, 100, 100);
+    $my-theme-accent: mat-palette($mat-blue, 300);
+    $my-theme-warn: mat-palette($mat-red, 400);
+
+    // create theme (use mat-dark-theme for themes with dark backgrounds)
+    $my-theme: mat-dark-theme(
+        $my-theme-primary,
+        $my-theme-accent,
+        $my-theme-warn
+    );
+// use our theme with angular-material-theme mixin
+    @include angular-material-theme($my-theme);    
+    @include component-theme($my-theme);
+    $color:  mat.get-color-from-palette($my-theme-primary, 100);
+    $background: mat.get-color-from-palette($my-theme-primary, 700);
+    .k-grid 
+    {
+        background-color: $background;
+        color: $color;
+    }
+    .k-column-title
+    {
+        color: mat.get-color-from-palette($my-theme-primary, 200);
+    }
+    .k-grid-content 
+    {
+        background-color: $background;
+        color: $color;
+    }
+    .k-grid .k-grid-filter, .k-grid .k-header-column-menu, .k-grid .k-hierarchy-cell .k-icon
+    {
+        color: $color;
+    }
+    .k-grid-header, .k-grouping-header, .k-grid-add-row, .k-grid-footer
+    {
+        color: $color;
+    }
+    .mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary
+    {
+        color: $color;
+    }
+    .mat-icon.mat-primary
+    {
+        color: $color;
+    }
+    .mat-menu-content
+    {
+        color: $color;
+    }
+}  
+
+html, body { 
+    height: 100%; 
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.non-visible
+{
+    display: none!important;
+}
+.non-visible-flux
+{
+    visibility: hidden;;
+}
+
+.k-grid
+{
+    border-radius: 4px
+}
+
+.container-page
+{
+    overflow: auto;
+}
+
+.flex-style
+{
+    font-size: 20px;
+}
+.mat-dialog-container-custom
+{
+    max-width: 100vw!important;
+    max-height: 100vh;
+}
+
+
+@media #{$information-desktop}/*Bureau*/
+{   
+    .container-page
+    {
+        height: calc(100% - 64px); 
+    }
+    html, body { 
+        min-width: calc(100vh * 4 / 3);
+        // limita tion en 16/9
+        padding-left:  calc((100% - (100vh * 16 / 9)) / 2);
+        padding-right: calc((100% - (100vh * 16 / 9)) / 2);
+    }
+}
+@media #{$information-pad} /*Tablette*/
+{
+    .container-page
+    {
+        height: calc(100% - 64px); 
+    }
+}
+
+@media #{$information-pad-portrait} /*Téléphone*/
+{    
+    .container-page
+    {
+        height: calc(100% - 56px - 56px);   
+    }
+    .mat-dialog-container-custom .mat-dialog-container
+    {
+        border-radius: 0!important;
+    }
+    .mat-dialog-container-custom
+    {      
+        max-width: 100vw!important;
+        max-height: 100vh;
+        width: 100%;
+        height: 100%;
+        padding: 0!important;
+        margin: 0;
+        position: 0;
+    }
+}
+
+.block
+{
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch; 
+    align-content:stretch;
+    height: 100%;
+}
+.item
+{
+    flex-basis: auto;
+    flex-grow: 1;
+}
+
+/* Bar de bouton Modal*/
+
+.p-dialog-actions
+{
+    justify-content: flex-end;
+    grid-area: dialog-actions;
+}
+
+.p-dialog-titre
+{
+    grid-area: dialog-titre;
+}
+
+
+.p-dialog-titre-principal {
+    font-weight: 500!important;
+}
+
+.p-dialog-content
+{
+    grid-area: dialog-content
+}
+.p-dialog-text
+{
+    text-align: left;
+    white-space: pre-wrap!important;
+    overflow: auto;
+}
+.p-dialog-titre
+{
+    margin: 0 -16px 0 -16px;
+    padding: 0;
+}
+.p-dialog-titre-list
+{
+    padding: 0!important;
+}
+
+@media #{$information-phone} /*Téléphone*/
+{ 
+    .p-dialog-form-contains
+    {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas:  "dialog-actions" "dialog-titre" "dialog-content" ;
+        gap: 0;
+    }
+    .mat-dialog-actions
+    {
+        margin: 0!important;
+    }
+    .p-dialog-actions
+    {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin: -12px 0 0px 0px!important;
+        padding: 0 0 12px 0!important;
+        min-height: 36px!important;
+    }
+
+    .p-dialog-titre
+    {
+        margin: 0 -24px 8px -24px;
+        padding: 0 24px;
+    }
+    :host .p-dialog-titre .list-dialog-item .mat-list-item-content
+    {
+        padding: 0 44px;
+    }
+
+    .mat-card
+    {
+        padding: 8px!important;
+    }
+}
+
+/** Grid */
+
+.p-grid-icon
+{
+    vertical-align: middle;
+    padding-right: 10px;
+}
+.k-grid th, .k-grid td {
+    padding: 10px 12px;
+}
+
+/*block de donnée*/
+.p-label-donnee
+{
+    flex-grow: 1;
+    padding: 4px;
+    font-size: 120%;
+}
+.p-label-titre
+{
+    padding: 0;
+    padding-bottom: 8px;   
+    font-size: 120%;
+    line-height: 40px;
+}
+
+
+/*block d'aide*/
+.p-icon-help
+{
+    padding-right: 8px;
+}
+
+/*menue de raccorcie icone*/
+.menu-button-icone
+{
+    height: 60px;
+    width: 80px;
+}
+.menu-action-contains
+{
+   display: grid;
+   gap: 8px;
+   padding: 8px 16px;
+   grid-template-columns: 80px 80px;
+   grid-template-rows: auto;
+  
+}

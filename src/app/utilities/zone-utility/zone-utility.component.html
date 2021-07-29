@@ -1,0 +1,14 @@
+<form class="form-zone" [formGroup]="refFormGroup" (ngSubmit)="onSubmitRefForm()">
+    <div>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Saisie code barre</mat-label>
+            <input appFocus matInput formControlName="barcode" placeholder="EAN...">
+        </mat-form-field>
+    </div>
+
+    <div>
+        <button color="primary" type="button" mat-fab>
+            <mat-icon>wb_iridescent</mat-icon>
+        </button>
+    </div>
+</form>

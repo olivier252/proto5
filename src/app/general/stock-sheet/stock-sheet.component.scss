@@ -1,0 +1,187 @@
+@import "../../../assets/css/variable.scss";
+
+.ilibelle
+{    
+    font-style: italic;
+    font-weight: 100;
+    font-size: 70%;
+    line-height:1e;
+    padding: 0 0px 0 0px;
+}
+
+.idata
+{
+    padding: 0 0px 2px 0px;    
+    line-height:1e;
+}
+
+.taillesBlock
+{
+    width: 100%;
+    display: flex;
+    justify-content:stretch;
+    align-items:center;
+    align-content:stretch;
+    flex-wrap:wrap;
+}
+.tailleBlock
+{
+    flex-grow:1;
+    min-width: 40px;
+    max-width: 80px;
+}
+
+.tailleLibelle
+{
+    //font-style: italic;
+    font-weight: 100;
+    font-size: 70%;
+    line-height:1e;
+    padding: 0 0px 0 0px;
+    text-align:center; 
+    border-style: none solid none solid;
+    border-width: 2px;
+    border-radius:10px;
+}
+
+
+.tailleData
+{
+    font-size: 70%;
+    padding: 0 0px 0px 0px;
+    text-align:center; 
+    line-height:1e;
+}
+
+
+.infoBock
+{
+    display: grid;
+    grid-auto-flow: row dense;
+}
+
+
+.boxInfo
+{
+    display: grid;
+    grid-template-columns: auto 32px;
+    grid-template-rows: auto; 
+    align-items: center;
+}
+
+
+.yCases
+{
+    grid-column: span 2;
+}
+
+.ilibelleOpen
+{
+    font-size: 100%;
+}
+
+@media #{$information-desktop}
+{
+    .infoBock
+    {
+        padding:12px;
+        gap: 12px;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto; 
+    }  
+    .cardBlock
+    {
+        padding: 12px 12px 0 12px;
+    }
+
+    // .layout
+    // {
+    //     overflow-x: hidden;
+    //     height:  100%;
+    // }
+
+    .xCases
+    {
+        grid-column: span 4;
+    }
+}
+
+@media #{$information-pad} /*tablette*/
+{
+    .infoBock
+    {
+        padding:8px;
+        gap: 8px;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto; 
+    }
+    .cardBlock
+    {
+        padding: 8px 8px 0 8px;
+    }
+
+    // .layout
+    // {
+    //     overflow-x: hidden;
+    //     height:  100%;
+    // }
+
+    .xCases
+    {
+        grid-column: span 3;
+    }
+}
+
+@media #{$information-pad-portrait} /*Téléphone*/
+{
+    .infoBock
+    {
+        padding:8px;
+        gap: 8px;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto; 
+    }
+    .cardBlock
+    {
+        padding: 8px 8px 0 8px;
+    }
+
+    // .layout
+    // {
+    //     overflow-x: hidden;
+    //     height:  100%;
+    // } 
+    
+    .xCases
+    {
+        grid-column: span 2;
+    }
+}
+
+@media #{$information-phone} /*Téléphone*/
+{
+    .infoBock
+    {
+        padding: 4px;
+        column-gap: 4px;    
+        row-gap: 8px;  
+        grid-template-columns: auto auto;
+        grid-template-rows: auto; 
+        font-size: 150%;
+    }
+    .cardBlock
+    {
+        padding: 4px 4px 0 4px;
+    }
+
+    // .layout
+    // {
+    //     overflow-x: hidden;
+    //     height:  100%;
+    // }
+
+    .xCases
+    {
+        grid-column: span 2;
+    }
+}
